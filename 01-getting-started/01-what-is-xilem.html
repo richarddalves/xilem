@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>What is Xilem? - The Xilem Book</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-2af7acc8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-838ab518.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Xilem Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="what-is-xilem"><a class="header" href="#what-is-xilem">What is Xilem?</a></h1>
+<p>At its heart, Xilem is an answer to a question that’s been nagging Rust developers for years: <strong>how do you build graphical interfaces that feel natural to write in Rust, without fighting the borrow checker at every turn or abandoning the language’s strengths?</strong></p>
+<p>Traditional GUI frameworks often clash with Rust’s ownership model. They expect you to store mutable references to widgets in multiple places, update them imperatively when things change, and generally do the kinds of things that make the borrow checker unhappy. You can make it work - people have - but it often feels like you’re working <em>against</em> the language rather than <em>with</em> it.</p>
+<p>Xilem takes a fundamentally different approach borrowed from the reactive frameworks that have transformed web development over the past decade. To understand what makes it different, we first need to look at how GUI frameworks work in general.</p>
+<h2 id="understanding-gui-paradigms"><a class="header" href="#understanding-gui-paradigms">Understanding GUI Paradigms</a></h2>
+<p>Before we look at how Xilem works specifically, it helps to understand the fundamental approaches to building graphical interfaces. There are three main paradigms you’ll encounter in GUI development, and understanding these will clarify what makes Xilem different and why certain design decisions were made.</p>
+<h3 id="immediate-mode-redrawing-everything-every-frame"><a class="header" href="#immediate-mode-redrawing-everything-every-frame">Immediate Mode: Redrawing Everything Every Frame</a></h3>
+<p>In an immediate mode GUI, you redescribe your entire interface from scratch every time the screen needs to update - typically many times per second. Think of it like drawing on a whiteboard: you erase everything and redraw the complete picture each time something changes.</p>
+<p>Here’s what immediate mode code looks like in pseudocode:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// This loop runs continuously, maybe 60 times per second
+loop {
+    // We describe the interface fresh every iteration
+    if button("Click me") {
+        counter += 1;
+    }
+    
+    label(&amp;format!("Count: {}", counter));
+    
+    if button("Reset") {
+        counter = 0;
+    }
+}
+<span class="boring">}</span></code></pre>
+<p>Notice how we’re not creating button and label objects that persist. We’re simply describing that a button exists, right here in the code, and checking if it was clicked. The widgets themselves are recreated every frame.</p>
+<p>This approach has significant advantages: the code is remarkably simple and direct, you never have to worry about keeping UI state synchronized with application state because the UI is rebuilt every frame, and there are no complex object lifetimes to manage. These benefits make immediate mode particularly popular for developer tools, debugging interfaces, and editor UI.</p>
+<p>The trade-offs come with efficiency and capability. Redescribing everything every frame uses more CPU than updating only what changed, smooth animations and transitions require careful handling since the UI is constantly being recreated, and integration with system accessibility features can be challenging since there’s no persistent widget tree for screen readers to navigate.</p>
+<h3 id="retained-mode-long-lived-widget-objects"><a class="header" href="#retained-mode-long-lived-widget-objects">Retained Mode: Long-Lived Widget Objects</a></h3>
+<p>Retained mode is what most traditional GUI frameworks use. You create widget objects once, they stay in memory for as long as they’re needed, and you update specific properties on specific widgets when things need to change. It’s like building with blocks: you construct your interface piece by piece, and those pieces remain until you explicitly remove them.</p>
+<p>Here’s what the same counter looks like in retained mode pseudocode:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// Setup phase (happens once)
+let button = Button::new("Click me");
+let label = Label::new("Count: 0");
+let reset_button = Button::new("Reset");
+
+// Store references to these widgets somehow
+let mut counter = 0;
+
+// Set up event handlers
+button.on_click(move || {
+    counter += 1;
+    label.set_text(&amp;format!("Count: {}", counter));
+});
+
+reset_button.on_click(move || {
+    counter = 0;
+    label.set_text("Count: 0");
+});
+
+// Add widgets to window and run event loop
+window.add(button);
+window.add(label);
+window.add(reset_button);
+window.run();
+<span class="boring">}</span></code></pre>
+<p>You can see the difference: the button and label are objects you create and keep references to. When something changes, you have to explicitly update the relevant widgets. The <code>button.on_click()</code> callback has to know about the <code>label</code> and manually call <code>set_text()</code> on it.</p>
+<p>Retained mode is more efficient than immediate mode because you only update what actually changed, it integrates naturally with operating system accessibility features since there’s a real widget tree that persists, and it’s better suited for complex animations and transitions since widgets maintain their state between frames.</p>
+<p>The significant downside is complexity. You have to manage references to widgets (which in Rust means fighting with the borrow checker), your application state and UI state can get out of sync if you forget to update something, and the update logic gets scattered across multiple event handlers as your application grows.</p>
+<h3 id="declarative-describing-what-not-how"><a class="header" href="#declarative-describing-what-not-how">Declarative: Describing What, Not How</a></h3>
+<p>Declarative GUIs take a different approach: you write a function that describes what the interface should look like based on your application state, and the framework figures out how to make the actual interface match that description. You’re specifying the desired result, not the steps to achieve it.</p>
+<p>Here’s the counter in a declarative style:</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn app_view(counter: i32) -&gt; View {
+    Column::new()
+        .child(Button::new("Click me"))
+        .child(Label::new(&amp;format!("Count: {}", counter)))
+        .child(Button::new("Reset"))
+}
+
+// Somewhere in your application loop:
+// 1. Handle events (button clicks update the counter variable)
+// 2. Call app_view(counter) to get a description of the interface
+// 3. Framework diffs this against the previous description
+// 4. Framework updates only the widgets that actually changed
+<span class="boring">}</span></code></pre>
+<p>Notice the fundamental shift: <code>app_view()</code> doesn’t update anything. It doesn’t have to know which specific label widget needs its text changed. It just says “given this counter value, here’s what the interface looks like.” The framework handles the rest.</p>
+<p>This is the approach Xilem takes. When the counter changes from 5 to 6, you call <code>app_view(6)</code>, get a new description, and Xilem figures out that only the label’s text needs to update - it doesn’t recreate the entire interface.</p>
+<p>The advantages are substantial: your code is easier to read and reason about because there’s one clear function showing what the interface looks like for any state, state management is simpler because the state lives in one place rather than scattered across widgets, and in Rust specifically, this approach works beautifully with ownership rules because you’re not holding long-lived references to widgets.</p>
+<p>The main requirement is that the framework must be sophisticated enough to efficiently diff your interface descriptions and apply minimal updates. This is exactly what Xilem does with its reconciliation engine.</p>
+<h2 id="the-reactive-model"><a class="header" href="#the-reactive-model">The Reactive Model</a></h2>
+<p>Now that you understand the three main GUI paradigms, let’s talk about where Xilem sits and what “reactive” actually means in practice.</p>
+<p>As we saw in the declarative paradigm, you describe what your interface should look like, and the framework handles making it happen. Reactive programming takes this idea and adds an important piece: <strong>automatic synchronization between your application state and the interface</strong>. When your state changes, the framework automatically calls your view function with the new state, gets the updated description, and figures out what needs to change in the actual UI.</p>
+<p>This is what “reactive” means - the UI <em>reacts</em> to changes in your state without you having to manually orchestrate the updates. You write a pure function from state to UI description, and the framework handles everything else. Your application state lives in one place - not scattered across widgets - and the UI is always an accurate reflection of that state.</p>
+<blockquote>
+<p>This approach has a profound effect on how you think about building interfaces. Instead of orchestrating sequences of updates (“when this button is clicked, update that label, then enable this button, then…”), you think in terms of transformations: <strong>given this state, the interface looks like this</strong>. The function from state to UI description becomes the single source of truth about what your application looks like at any moment.</p>
+</blockquote>
+<p>Here’s something important that might surprise you: when you’re actually building an application with Xilem, you often won’t <em>feel</em> like you’re explicitly “managing state” or “describing the interface for any given state.” The abstractions work so naturally that you simply describe your interface, and it works. You’re not constantly thinking “now I need to handle this state transition” - you just write what the interface should be, and the state management happens almost invisibly. This is by design. The goal is for the reactive model to feel effortless once you understand the basic pattern, not to make you constantly aware of the machinery underneath.</p>
+<h2 id="xilems-architecture"><a class="header" href="#xilems-architecture">Xilem’s Architecture</a></h2>
+<p>Xilem doesn’t operate in isolation. It’s built as a layer on top of <strong>Masonry</strong>, which itself sits on top of a stack of specialized Rust libraries. Understanding how these pieces fit together helps clarify what Xilem is and isn’t responsible for.</p>
+<p><strong>Masonry</strong> is the foundation. It’s a widget toolkit that handles the low-level details of GUI work: managing a tree of widgets, routing events like mouse clicks and key presses, calculating layouts, and rendering everything to the screen. Masonry gives you widgets like buttons, text boxes, and containers, but you interact with them somewhat imperatively. You could build a complete application directly with Masonry if you wanted to, but you’d be writing a lot of manual update logic.</p>
+<p><strong>Xilem</strong> sits on top of Masonry and provides the reactive layer. When you write a Xilem application, you’re creating view trees that Xilem reconciles against the actual Masonry widget tree. Xilem handles the diffing and update logic automatically, so you never have to manually tell a widget to update. You just describe what the interface should be, and Xilem makes it happen.</p>
+<p><img src="../assets/xilem-layers.svg" alt="Xilem project layers"></p>
+<p>Below Masonry, there’s an ecosystem of specialized libraries handling specific concerns:</p>
+<ul>
+<li><strong>Vello</strong> does the actual 2D rendering using GPU compute shaders</li>
+<li><strong>Parley</strong> handles text layout and shaping</li>
+<li><strong>AccessKit</strong> integrates with platform accessibility APIs</li>
+<li><strong>Winit</strong> manages windows and handles the platform-specific details of creating GUI applications on Windows, macOS, and Linux</li>
+</ul>
+<p>Xilem benefits from all of these, but you rarely need to think about them directly.</p>
+<blockquote>
+<p><strong>Think of it like this:</strong> If you were building a car:</p>
+<ul>
+<li>Vello and Parley would be the engine and transmission - powerful, specialized components that do specific jobs well.</li>
+<li>Masonry would be the chassis and controls. It gives you a complete vehicle you could theoretically drive.</li>
+<li>Xilem is the automatic transmission and cruise control. It takes the mechanical complexity and gives you a smoother, more pleasant driving experience.</li>
+</ul>
+</blockquote>
+<h2 id="how-xilem-differs-from-other-approaches"><a class="header" href="#how-xilem-differs-from-other-approaches">How Xilem Differs from Other Approaches</a></h2>
+<p>If you’ve explored GUI options in Rust before, you’ve probably encountered a few different philosophies about how to build interfaces. Now that you understand the three main GUI paradigms, let’s look at how various Rust frameworks implement them and where Xilem fits in.</p>
+<h3 id="immediate-mode-egui"><a class="header" href="#immediate-mode-egui">Immediate Mode: EGUI</a></h3>
+<p><strong>EGUI</strong> is the most popular immediate mode GUI framework in Rust. As we discussed in the previous section, it redraws the interface every frame, which makes the code remarkably straightforward. You write what looks like a simple loop that describes your interface, and it just works.</p>
+<p>EGUI excels at developer tools and debugging interfaces - situations where you need to quickly throw together a functional UI and don’t care about perfectly matching system design language or having the most optimized rendering. The simplicity is a major strength: there are no complex state management patterns to learn, no widget lifetime issues to wrestle with, and the mental model is about as simple as GUI programming gets.</p>
+<p>The trade-off is that EGUI’s approach makes some things difficult. Because the UI is regenerated every frame, smooth animations require careful coordination, integration with operating system accessibility features is limited, and you’re always using some CPU to redraw even when nothing changed. For applications where battery life matters or where you need deep platform integration, these limitations can be significant.</p>
+<h3 id="declarative-native-gpui-and-lapce"><a class="header" href="#declarative-native-gpui-and-lapce">Declarative Native: GPUI and Lapce</a></h3>
+<p><strong>GPUI</strong>, the framework behind the Zed editor, and <strong>Lapce’s</strong> GUI framework both take declarative approaches similar to Xilem, but with different implementation details and focus areas.</p>
+<p>GPUI was built specifically to support a high-performance code editor, which shapes many of its design decisions. It uses a declarative API where you describe your interface based on application state, but it’s optimized heavily for the specific patterns that editors need: rendering large amounts of text efficiently, handling complex syntax highlighting, and managing multiple cursor positions. The framework has proven itself in production - Zed is a real application that people use daily - which gives confidence in the approach.</p>
+<p>Lapce similarly built its own declarative GUI framework to support editor use cases. Like GPUI, it demonstrates that you can build production-quality applications with this programming model in Rust.</p>
+<p>What distinguishes Xilem from these editor-focused frameworks is scope and intent. GPUI and Lapce’s frameworks were built to solve specific problems for specific applications. Xilem aims to be a general-purpose GUI framework that works well for any kind of application. The Xilem team is thinking about developer tools, yes, but also business applications, creative tools, games, and anything else you might build with a GUI. That broader scope means different trade-offs in the API design and optimization targets.</p>
+<h3 id="declarative-cross-platform-qml"><a class="header" href="#declarative-cross-platform-qml">Declarative Cross-Platform: QML</a></h3>
+<p>Outside the Rust ecosystem, <strong>QML</strong> (Qt Modeling Language) is worth mentioning as another declarative approach, though it targets C++ rather than Rust. QML lets you describe interfaces using a JSON-like syntax, and the Qt framework handles rendering and updates. It’s been used in production for years in everything from automotive interfaces to desktop applications.</p>
+<p>QML demonstrates that declarative GUIs can work at scale and in demanding environments. However, when you use QML from Rust (through Qt bindings), you encounter the same impedance mismatch issues that any C++ framework brings: the borrow checker fights against APIs that expect shared mutable state, and you end up writing Rust that doesn’t feel quite natural because you’re working around assumptions the underlying library makes.</p>
+<h3 id="bindings-to-traditional-frameworks"><a class="header" href="#bindings-to-traditional-frameworks">Bindings to Traditional Frameworks</a></h3>
+<p>Some frameworks, like <strong>gtk-rs</strong> or <strong>Qt bindings</strong>, wrap existing C or C++ libraries and give you Rust bindings to them. These are mature and feature-complete, but they carry the design assumptions of their underlying libraries, which weren’t built with Rust’s ownership model in mind. You spend time working around impedance mismatches between Rust and the imperative APIs you’re calling.</p>
+<p>These bindings give you access to decades of development effort and extensive widget libraries, which is valuable. But the experience of using them in Rust often feels like you’re fighting the language rather than working with it. The frameworks expect you to pass around mutable references to widgets and share state in ways that Rust’s ownership system resists.</p>
+<h3 id="web-technology-tauri-and-dioxus"><a class="header" href="#web-technology-tauri-and-dioxus">Web Technology: Tauri and Dioxus</a></h3>
+<p><strong>Tauri</strong> and <strong>Dioxus</strong> take the web stack approach, rendering your UI with HTML, CSS, and JavaScript (or WebAssembly). This gives you access to the mature ecosystem of web technologies and can be a great choice if you’re already comfortable there. The trade-off is that you’re running a web browser engine in your application, which has implications for resource usage and the kinds of native integrations you can easily do.</p>
+<p>For some applications, especially those that already have web versions or where rapid iteration on visual design is important, this approach makes perfect sense. The web platform has solved many hard problems around layout, text rendering, and styling, and leveraging that work can save significant development time.</p>
+<blockquote>
+<p><strong>Xilem’s bet</strong> is that building GUI frameworks natively in Rust, from the ground up, will eventually give you the best of all worlds: native performance and integration, a programming model that works naturally with Rust’s ownership system, and full control over the entire stack.</p>
+</blockquote>
+<p>The framework is still young, so it doesn’t yet have the maturity or feature completeness of alternatives that have been around longer. But the architecture is designed to get there eventually. Unlike frameworks built for specific applications like editors, Xilem aims to be general-purpose. Unlike bindings to C++ frameworks, it’s designed from the start to work with Rust’s ownership model. And unlike web-based approaches, it controls the entire rendering stack, which opens possibilities for optimization and integration that wouldn’t be possible otherwise.</p>
+<h2 id="what-makes-xilem-xilem"><a class="header" href="#what-makes-xilem-xilem">What Makes Xilem “Xilem”</a></h2>
+<p>Three core ideas define what Xilem is and how it approaches GUI development in Rust.</p>
+<h3 id="views-are-data-not-objects"><a class="header" href="#views-are-data-not-objects">Views Are Data, Not Objects</a></h3>
+<p>When you create a button in Xilem, you’re not constructing an object that will live for the lifetime of your application. You’re creating a lightweight description of a button that exists just long enough to be compared against the previous description and used to update the real widget tree.</p>
+<p>This might feel strange at first if you’re used to frameworks where widgets are long-lived objects you hold references to, but it’s what allows Xilem to work smoothly with Rust’s ownership rules. You never need to worry about managing the lifetime of a widget or storing mutable references to UI elements.</p>
+<h3 id="state-flows-downward-events-flow-upward"><a class="header" href="#state-flows-downward-events-flow-upward">State Flows Downward, Events Flow Upward</a></h3>
+<p>Your application maintains centralized state, and view functions transform that state into interface descriptions that flow down into the widget tree. When users interact with the interface - clicking buttons, typing text, dragging sliders - events flow back up through callbacks that modify the application state.</p>
+<p>This <strong>unidirectional data flow</strong> makes it much easier to reason about how your application behaves than frameworks where state and logic can live anywhere.</p>
+<h3 id="the-framework-handles-reconciliation-automatically"><a class="header" href="#the-framework-handles-reconciliation-automatically">The Framework Handles Reconciliation Automatically</a></h3>
+<p>You never write code that says “when this state changes, update that widget’s text property and this other widget’s color.” Instead, you write a function that describes the entire interface for any given state, and Xilem efficiently figures out what actually needs to change.</p>
+<p>This reconciliation happens behind the scenes using techniques like tree diffing and memoization to ensure that only the parts of your interface that actually changed get updated.</p>
+<hr>
+<h2 id="where-xilem-is-going"><a class="header" href="#where-xilem-is-going">Where Xilem Is Going</a></h2>
+<p>The reactive architecture is in place and working. You can build applications with Xilem today and see how this programming model feels in practice. What’s still evolving is the specific API surface - exactly how you express common patterns, what abstractions the framework provides for composition and reuse, and how to handle advanced scenarios that emerge as people build more complex applications.</p>
+<p>The Xilem team is actively experimenting with different approaches to problems like component composition, state management, and performance optimization. Some of these experiments will work out and become permanent parts of the framework. Others will turn out to be dead ends and get replaced with better ideas. This is the normal process of designing a framework, just happening in public where you can see it and participate if you choose.</p>
+<blockquote>
+<p><strong>What this means for you:</strong> Xilem gives you the reactive programming model and the integration with Masonry’s widget toolkit, but the exact details of how you use these pieces together are still being refined. The core concepts - view trees, reconciliation, unidirectional data flow - will remain stable even as the API evolves around them.</p>
+</blockquote>
+<h2 id="moving-forward"><a class="header" href="#moving-forward">Moving Forward</a></h2>
+<p>Now that you understand what Xilem is trying to accomplish and how it fits into the broader landscape of Rust GUI development, you’re ready to see it in action. The next chapter will walk you through installing Xilem and setting up your development environment. After that, we’ll build your first application and examine exactly how the reactive model works in practice.</p>
+<p>Understanding these concepts before diving into code will help everything click into place as you work through the examples. You’ll recognize the view tree being constructed, see the reconciliation happening, and understand why the code is structured the way it is. That conceptual foundation makes learning the specifics much faster and less confusing.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../01-getting-started/02-installation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../01-getting-started/02-installation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
